@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Edward! 🍺</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 50%, #1a0a00 100%);
+            font-family: 'Lora', serif;
+            color: #f4e4bc;
+            overflow-x: hidden;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .halo {
+            position: relative;
+            display: inline-block;
+            margin: 30px 0 20px;
+        }
+
+        .halo::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 40px;
+            border: 4px solid #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ffd700, 0 0 40px #ffa500;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px #ffd700, 0 0 40px #ffa500; }
+            to { box-shadow: 0 0 30px #ffd700, 0 0 60px #ffa500; }
+        }
+
+        .jesus-beer {
+            font-size: 100px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 20px 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .scripture {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .scripture-ref {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ffd700;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        .reveal-section {
+            margin: 30px 0;
+        }
+
+        .reveal-btn {
+            background: linear-gradient(145deg, #8B4513, #654321);
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 15px 30px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .reveal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .hidden-content {
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        .hidden-content.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .destination {
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .destination h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: #ffd700;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .destination p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .beer-rating {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 15px 0;
+            font-size: 1.8rem;
+        }
+
+        .itinerary {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .itinerary-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .itinerary-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .fine-print {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .hearts {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            animation: pulse 1.5s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .signature {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+
+        .monk-facts {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .monk-facts h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="halo">
+            <div class="jesus-beer">🍺</div>
+        </div>
+
+        <h1 class="title">Happy Birthday, Edward!</h1>
+        
+        <p class="subtitle">A Sacred Announcement</p>
+
+        <div class="scripture">
+            "And lo, Jesus looked upon the water and said unto his disciples: 'Watch this.' And it was beer. And it was good. And it was Belgian."
+            <span class="scripture-ref">— Westvleteren 12:1</span>
+        </div>
+
+        <div class="message">
+            <p>Dearest Edward,</p>
+            <p style="margin-top: 15px;">On this holiest of days (your birthday), you have been chosen for a sacred pilgrimage...</p>
+        </div>
+
+        <div class="reveal-section">
+            <button class="reveal-btn" onclick="revealDestiny()">
+                ✨ Reveal Thy Destiny ✨
+            </button>
+        </div>
+
+        <div class="hidden-content" id="destination-reveal">
+            <div class="destination">
+                <h3>🏰 Westvleteren, Belgium 🏰</h3>
+                <p>Home of the <strong>BEST BEER IN THE WORLD</strong></p>
+                <div class="beer-rating">🍺🍺🍺🍺🍺</div>
+                <p>Brewed by actual monks who took a vow of silence (probably because they're too drunk to talk)</p>
+            </div>
+
+            <div class="scripture">
+                "Blessed are those who thirst for righteousness, for they shall drink Westvleteren 12 at In De Vrede, the ONLY bar in the entire world allowed to serve it."
+                <span class="scripture-ref">— Beatitudes (Extended Cut)</span>
+            </div>
+
+            <div class="monk-facts">
+                <h4>📜 Holy Facts:</h4>
+                <p>• The monks only brew enough to support the abbey</p>
+                <p>• There's a beer hotline (yes, really) to reserve bottles</p>
+                <p>• They've been brewing since 1838</p>
+                <p>• The monks pray 7 times a day. Coincidence? I think not.</p>
+            </div>
+
+            <button class="reveal-btn" onclick="revealMore()" style="margin-top: 20px;">
+                🥾 But Wait, There's More...
+            </button>
+        </div>
+
+        <div class="hidden-content" id="more-reveal">
+            <div class="itinerary">
+                <h3 style="color: #ffd700; text-align: center; margin-bottom: 20px;">Thy Holy Itinerary</h3>
+                
+                <div class="itinerary-item">
+                    <span class="itinerary-icon">⛪</span>
+                    <div>
+                        <strong>The Pilgrimage</strong><br>
+                        Visit the sacred grounds of Sint-Sixtus Abbey and drink holy beer at In De Vrede
+                    </div>
+                </div>
+
+                <div class="itinerary-item">
+                    <span class="itinerary-icon">🥾</span>
+                    <div>
+                        <strong>The Trek</strong><br>
+                        A scenic hike through the Belgian countryside (to work up that holy thirst)
+                    </div>
+                </div>
+
+                <div class="itinerary-item">
+                    <span class="itinerary-icon">🏨</span>
+                    <div>
+                        <strong>The Rest</strong><br>
+                        2 nights in Lille (or a city of your choosing, birthday boy!)
+                    </div>
+                </div>
+
+                <div class="itinerary-item">
+                    <span class="itinerary-icon">❤️</span>
+                    <div>
+                        <strong>The Company</strong><br>
+                        Me! Your favorite person! (Don't argue, it's your birthday)
+                    </div>
+                </div>
+            </div>
+
+            <div class="scripture">
+                "For where two or three are gathered in my name, there shall also be Belgian beer and hiking boots."
+                <span class="scripture-ref">— The Gospel of Good Times 3:16</span>
+            </div>
+
+            <div class="hearts">❤️ 🍺 ❤️ 🥾 ❤️ 🍺 ❤️</div>
+
+            <p class="message">May your birthday be filled with foam, good trails, and zero hangovers (okay, maybe a small one).</p>
+
+            <p class="signature">All my love,<br>Courtney 💕</p>
+
+            <p class="fine-print">* No monks were harmed in the making of this birthday present<br>
+            * Beer consumption is mandatory<br>
+            * Hiking difficulty level: "We'll see how we feel after the beer"</p>
+        </div>
+    </div>
+
+    <script>
+        function revealDestiny() {
+            document.getElementById('destination-reveal').classList.add('show');
+            createConfetti();
+            // Scroll to revealed content
+            setTimeout(() => {
+                document.getElementById('destination-reveal').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function revealMore() {
+            document.getElementById('more-reveal').classList.add('show');
+            createConfetti();
+            setTimeout(() => {
+                document.getElementById('more-reveal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function createConfetti() {
+            const emojis = ['🍺', '✨', '🎉', '⛪', '🎂', '💛'];
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    document.body.appendChild(confetti);
+
+                    const animation = confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(100vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 2000 + 2000,
+                        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    });
+
+                    animation.onfinish = () => confetti.remove();
+                }, i * 50);
+            }
+        }
+    </script>
+</body>
+</html>
